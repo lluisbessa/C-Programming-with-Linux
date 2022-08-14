@@ -1,5 +1,6 @@
 #include <stdio.h>
 int main(void){
+    // Initial variable declaration and initialization.
     int list[10];
     int n=10;
     int i,number;
@@ -11,10 +12,10 @@ int main(void){
     printf("Enter a number to search in the list: ");
     scanf("%d", &number);
     i=0;
-    while (i<n && !found) {
-        if (list[i]==number){
+    while (i<n && !found) { // Use of while loop because if we found the number we don't need any more loop.
+        if (list[i]==number){  // If we found the number at index "i" we set found to 1 (True)
             found=1;
-        } else {
+        } else { // Else we increment "i" by 1.
             i++;
         }
     }

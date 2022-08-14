@@ -25,14 +25,14 @@ int main(void){
 void readInt(int ** ptr, int size, int index){
     int i;
     for (i=0; i<size; i++){
-        scanf("%d", (* (ptr+index)+i));
+        scanf("%d", (* (ptr+index)+i)); // We enter to the "array[index][i] (means that if we are in the first array pointer, we enter to the pointer where we will store the values)".
     }
 }
 
 void readString(char ptr[5][11], int size){
     int i;
     for (i=0; i<size; i++){
-        scanf("%s", ptr[i]);
+        scanf("%s", ptr[i]); // We go through each space of 10 chars filling it with an actual string.
     }
 }
 
@@ -41,7 +41,7 @@ void printInt(int ** ptr, int size){
     printf("The two arrays together have these elements:\n");
     for (i=0; i<2; i++){
         for (j=0; j<size; j++){
-            printf("%d ", * (* (ptr+i)+j));
+            printf("%d ", * (* (ptr+i)+j)); // We double dereference because first we dereference to the value stored by the pointer of array[i] that's another pointer to the first element of the array[i], so we dereference that pointer so we can get the actual value.
         }
     }
     printf("\n");
@@ -50,7 +50,7 @@ void printString(char ptr[5][11], int size){
     int i;
     printf("You've entered the string: \n");
     for (i=0; i<size; i++){
-        printf("%s ", ptr[i]);
+        printf("%s ", ptr[i]); // We only use each location of a string of 10 chars (ptr[i] = *(ptr + i)), so we can print all the string until the null terminator \0.
     }
     printf("\n");
 }
